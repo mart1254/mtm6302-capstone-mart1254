@@ -31,3 +31,62 @@ Here are the two reference images I drew inspiration from:
 and 
 
 [Heart Gold & Soul Silver Pokedex UI](https://cdn.discordapp.com/attachments/395293697052377088/1158227623235829850/04-pokemon-hgss-feraligatr-screenshot.jpg?ex=651d7548&is=651c23c8&hm=3d87663c5932c68817eed0ffa5ca1227fc2d7d675eab4711a7c5bf5038b299eb&)
+
+
+## Web Development III Capstone Part-3
+
+**Steps Taken and Challenges faced**
+
+To start off, the steps I outlined for the creation of the Part-3 prototype is to put more focus on the JavaScript. To further explain I understand the JS was not a markable aspect of the project but due to the repeition of my prototype I wanted to take advange of the use of arrays and the createElement methods to essentially create my cards once, as well as freeing up code.
+
+I also figured it would be best to use JavaScript to try and mimick the PokeAPI, which is alos why I really emphasesed the use of JS arrays and objects - so that way I would hopefully be in a better position when it's time to start using the API.
+
+I encourted numerous challenges - most simply mistakes regarding CSS, such as appling a width of 50% to one of my images and later wondering why my image in the profile page doesn'take 100% of it's container, then 'debugging' only to find I never incraesed the width from 50%.
+
+Another is my apprent forgetfullness of the usage of CSS grids, I apptempted a Flex layout but using CSS grids for the mayjor layout of the profile page would have made my life a lot easier, I only seemed to remember when I was on my desktop media query and due to time constraints didn't re-code the tablet and mobile layouts with CSS grid.
+
+One issue I couldn't seem to deal with is the boarder width of the 'middle-section' part of the pokemon profile - this is mainly due to the flex layout.
+
+I also had an issue on line 497 of my style.css where I needed to have the parent of an h2 to be 25%, the smaller the better as there seemed to be some margin: 0 auto effect where my h2 would move to the right side dispite there being no property (to my knowldge at least)
+
+An issue realted to JS I had that I am quite proud of myself for solving: 
+
+I had an issue where I wanted to target each independent pokémon card from the Pokemon array but had no unique identifiers, so what I did is I used the toLowerCase function and the setAttributeFunction on the card-two div to give each pokemon card a unique ID which would allow them to be targeted independently. 
+
+I also had an issue on line 369 where adding my function caused the pushe object to duplicate every object before, I sloved this issue by adding the pop method to the conditional statment to remove the duplicate whenever the toggle is switched on for the first time (Does not solve adding multiple pokemon to the caught-list)
+
+I also had another JS issue I was unable to solve which was my sliders not removing the pokeball icon on the first slide, causing the user to have to toggle twice (adding two of the same pokemon to the caught-list). I believe the issue might be a CSS issues where I need to set the default state to display none but due to time constraints the issue was never resloved 
+
+## Citation
+
+All of my pokemon images are from the PokeAPI GitHub as I wanted to mimick the API and design accordingly. [Pokemon sprites](https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon) 
+
+[Large Pokemon sprites](https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon/other/official-artwork)
+
+[Pokeball](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png)
+
+I have used multiple sources to help me with my JavaScript such as StackedOverflow, MDM Web Docs, ChatGPT, and school resources such as the Rocket and Crazy Cates codepen plus the IMDAC BUT would like to clairify my use of ChatGPT. 
+
+I did not use it to write my code, more to ask questions if what I was thinkning was possible and for niche examples - I understand my code and am able to explain my logic, I also did not copy paste any code from ChatGPT that I did not understand, like mentioned before - my code and logic is the product of me with some assitance from ChatGPT. Most of my resuources were documentation and school resources.
+
+That being said I am/did not link the resources as I wasn't studying them but taking small bits of logic and trying to apply it to my thinking and code. I believe I had roughly 90 tabs open for examples and such but really only used the resources listed above. Plus not every example or documentation had what I was looking for and I lost track of what resuource were actually good.
+
+
+## Notes
+
+There is no third page as my orginal idea behind my design was to have a filtered list, I was not able to get around to using the navbar icon to display ONLY the caught-pokemon but was able to push the objects into the caught list and display that, I was also unsure if adding that array to a page would actually save the objects in the array when the user left the home page, so I played it safe and just added the list to the bottom of the homepage.
+
+The slider buttons require the user to toggle twice, there were some stylic changes as I wanted to keep things consistant, such as not having the profile padding anymore and displaying the same type button twice IF there was only one type (I found one button was odd looking, even if streched)
+
+There is also an issue regarding sizing of the pokemon profile in the profile page when the screen is between 1000px and 1500px, I believe this is a width issue but am unsure how to properly deal with it.
+
+As of right now there is no way to remove or 'release' pokemon from the caughtList other than refreshing. The list will be displayed at the bottom of the main grid when you 'catch' pokemon. 
+
+Clicking on the upper body of the pokemon cards will bring the user to only ONE pokemon profile page, looking at dynamic pages seemed out of my scope for now with fetch requests being a commonality (which I don't understand at this point).
+
+I also remember there being discussion on the use of dynamic IDs being frowned upon (I may be misremembering) but just wanted to say I did dynamic IDs since that way made the most sense for me at this time. 
+
+
+
+
+

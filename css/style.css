@@ -1,0 +1,602 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* ======================================================== My styles =============================================== */
+
+
+body {
+    background-image: url("/img/pokedex-grid.png");
+    background-color: #f2f2f2;
+    background-size: 50rem;
+
+}
+
+.navbar {
+    background-color: #EE3032 !important;
+}
+
+
+.navbar-brand {
+    font-family: urw-din, sans-serif;
+}
+
+.navbar-toggler {
+    border-style: none;
+}
+
+.caught-list-icon {
+    width: 5rem;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+#section-pokemon {
+    margin-bottom: 5rem;
+}
+
+#container-main-grid {
+    margin-top: 5.5rem;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(206px, 1fr));
+    grid-auto-rows: 22rem;
+}
+
+
+h1 {
+    font-family: ff-cocon-pro, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2.6rem;
+}
+
+
+.card-two  {
+    background-color: #d7d7d7;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card-two:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.card-two-body-up {
+    display: flex;
+    flex-direction: column;
+    background-color: #7ec219;
+    border-radius: 25px;
+    margin-bottom: 1rem;
+    
+}
+
+.container-card-index {
+    font-family: objektiv-mk1, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -18px;
+}
+
+/* Use this class with the JS slider like in lightbulb assignment to add margin when pokeball is set to display: none*/
+.caught-icon-none {
+    margin-top: 0.5rem;
+}
+
+.pokemon-img {
+    width: 10rem;
+    margin: 0 auto;
+    display: block;
+}
+
+.card-two-body-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-two-body-down h5 {
+    font-size: 1.5rem;
+    font-family: ff-cocon-pro, sans-serif;
+    margin-bottom: 1.5rem;
+}
+
+.container-card-btn {
+    margin-bottom: 2rem;
+}
+
+.type-one, .type-two {
+    font-family: objektiv-mk1, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    background-color: #7ec219;
+    padding: 5px 15px;
+    border-radius: 9px;
+    color: #000001;
+}
+
+.type-one {
+    margin-right: 0.4rem;
+}
+
+.container-card-switch {
+    display: flex;
+    align-items: center;
+}
+
+.caught-text {
+    font-family: objektiv-mk1, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+/* ================ Card Slider =============== */
+
+.card-two-body-down .switch {
+    background-color: #d7d7d7;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: -1px;
+    bottom: -1px;
+    background-color: #80311E;
+    transition: 0.4s;
+}
+
+.slider:after {
+    background-color: blueviolet;
+}
+
+input + .slider {
+    background-color: #4A5252;
+}
+
+input:checked + .slider {
+    background-color: #EE3032;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translate(36px);
+    background-image: url(/img/poke-ball.png);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+    background-size: 170%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+#container-caught-grid {
+    margin-top: 5.5rem;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(206px, 1fr));
+    grid-auto-rows: 22rem;
+}
+
+.container-more-button {
+    text-align: center;
+}
+
+.more-btn { 
+    font-family: objektiv-mk1, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    background-color:#EE3032;
+    padding: 5px 10%;
+    border-radius: 9px;
+    color: #000001;
+}
+
+footer {
+    background-color: #EE3032;
+    padding: 2rem;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    font-family: objektiv-mk1, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #000001;
+}
+
+
+/* ================================== Profile page =============================== */
+
+
+#section-pokemon-profile {
+    margin-bottom: 3rem;
+    background-color: #4A5252;
+    border-radius: 0px 0px 30px 30px;
+}
+
+.card-profile {
+    margin-top: 49px;
+    background-color: #d7d7d7;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.container-profile-img {
+    background-color: #399CFF;
+    width: 100%;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.profile-caught-icon {
+    position: absolute; 
+    top: 45px; 
+    width: 17%;  
+}
+
+.profile-img {
+    width: 100%;
+    display: block;
+}
+
+.profile-content-spacing {
+    padding: 0rem 1rem 1rem 1rem;
+}
+
+.card-profile .profile-content-spacing:nth-child(2) {
+    padding: 1rem 1rem 0 1rem;
+}
+
+.container-profile-middle {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #000001;
+}
+
+.container-name-index-profile-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-name-index {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.container-name-index h1 {
+    font-size: 2rem;
+    margin-right: 0.8rem;
+}
+
+.container-name-index h2 {
+    font-family: objektiv-mk1, sans-serif;
+    font-weight: 500;
+    font-size: 1.3rem;    
+}
+
+.container-profile-btn > .type-one{
+    background-color: #399CFF;
+}
+
+.container-profile-btn > .type-two {
+    background-color: #9CADF7;
+}
+
+.container-profile-switch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-profile-switch > .switch {
+    margin-bottom: 1rem;
+}
+
+.container-profile-switch > p {
+    margin-left: 0;
+}
+
+.profile-description {
+    font-family: objektiv-mk1, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5; 
+    margin-bottom: 1.5rem;
+}
+
+.profile-description h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.container-back-button {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.back-btn { 
+    font-family: objektiv-mk1, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    background-color:#EE3032;
+    padding: 5px 10%;
+    border-radius: 9px;
+    color: #000001;
+}
+
+/* ============================================== Media Queries ===================================== */
+
+
+@media screen and (min-width: 768px) {
+
+
+    .more-btn { 
+        font-size: 1rem;
+        padding: 10px 10%;
+        border-radius: 9px;
+    }
+
+    .back-btn { 
+        font-size: 1rem;
+        padding: 10px 10%;
+        border-radius: 9px;
+    }
+
+
+    .card-profile h1 {
+        font-size: 2.5rem;
+    }
+
+    .card-profile h2 {
+        font-size: 1.6rem;
+    }
+    
+    .card-profile {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .container-profile-img {
+        width: 50%;
+    }
+    
+    .profile-caught-icon {
+        width: 9%;  
+    }
+    
+    .card-profile .profile-content-spacing {
+        padding: 1rem 1rem;
+        width: 100%;
+    }
+
+    .card-profile .profile-content-spacing:nth-child(2) {
+        padding: 1rem 1rem;
+        width: 50%;
+        border-bottom: 1px solid #000001;
+    }
+
+    .container-profile {
+        width: 100%;
+    }
+    
+    .container-profile-middle {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-bottom: none;
+    }
+    
+    .container-name-index-profile-btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        margin-bottom: 8rem;
+    }
+
+    /* Keep width: 50% or else h2 shifts all the way to the right - something to do with the flex-direction of the the
+    container-profile-middle container but h2 is nested in a div with h1  */
+    .container-name-index {
+        margin-bottom: 2.5rem;
+        width: 25%;
+    }
+    
+    .container-profile-btn {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    /* Made buttons inline and not block so they can be used with flex */
+    .container-profile-btn .type-one, .container-profile-btn .type-two {
+        display: inline;
+        padding: 8px 15px;
+        text-align: center;
+        flex-grow: 1;
+    }
+    
+    /* removed flex becasue it did nothing */
+    .container-profile-switch {
+        margin: 0 auto;
+    }
+    
+} /* End of tablet media query */
+
+
+@media screen and (min-width: 992px) {
+
+    .caught-list-icon {
+        width: 16rem;
+    }
+
+    .card-profile h1 {
+        font-size: 3rem;
+    }
+
+    .card-profile h2 {
+        font-size: 2rem;
+    }
+
+    /* Resests .card-profile from flex */
+    .card-profile {
+        display: block;
+    }
+
+    .card-profile {
+        display: grid;
+        gap: 0px 50px;
+        padding-right: 50px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "img info"
+        "img desc"
+        ;
+    }
+
+    .container-profile-img {
+        grid-area: img;
+        width: 100%;
+    }
+
+    .card-profile .profile-content-spacing {
+        grid-area: desc;
+        width: 100%;
+    }
+
+    .card-profile .profile-content-spacing:nth-child(2) {
+        grid-area: info;
+        width: 100%;
+    }
+
+    .profile-caught-icon {
+        width: 6%;
+    }
+
+    .container-name-index {
+        margin-top: 3rem;
+    }
+
+    .container-profile-btn {
+        justify-content: left;
+    }
+
+    .container-profile-btn .type-one {
+        margin-right: 1.5rem;
+    }
+
+    .container-profile-btn .type-one, .container-profile-btn .type-two {
+        flex-grow: 0;
+        padding-top: 10px; 
+        padding-bottom: 10px;
+        text-align: center;
+        flex-basis: 150px
+    }
+
+    .container-profile-switch {
+        margin: 0 0;
+    }
+
+} /* End of desktop media query */
+
+
+
+
+
