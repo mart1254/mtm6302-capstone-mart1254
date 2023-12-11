@@ -87,6 +87,29 @@ Clicking on the upper body of the pokemon cards will bring the user to only ONE 
 I also remember there being discussion on the use of dynamic IDs being frowned upon (I may be misremembering) but just wanted to say I did dynamic IDs since that way made the most sense for me at this time. 
 
 
+## Web Development III Capstone Part-4
+
+**Steps Taken and Challenges faced**
+
+To start off, I first wanted to focus on retriving the PokeAPI, displaying it using my pokemonList array and then storing the "caught" pokemon in my caughtPokemonList array. I also wanted to use a custom object that used the same keys as my mock API to avoid me having to change code already present.
+
+I made my two arrays into functions which my async function fetchPokemonArray() called everytime fetchPokemonArray() was called. After this I was I wanted poth list function to be able to remove pokemon stored in local storage for ease of access.
+
+I faced numerous callenges throughout, which I don't remember all of but a few main ones were:
+
+I was unable to do my orginal plan of displaying the caughtPokemonList on a seperate page, so I had to settle using a modal and function to toggle the display of both arrays to show only one or the other.
+
+I was also unable to make the toggle and caught icons stay in their caught posistions after refreshing the page, every attempt lead to my program crashing and a multitude of errors occuring. 
+
+Due to time constraints, I was unable to focus on the search bar within my program and thus is left complete with it not being able to search anything. 
+
+I also had difficulty in general keeping up with the asynchronous functions' paths, leading me to encounter errors at different locations and different times.
+
+
+
+
+
+
 
 
 

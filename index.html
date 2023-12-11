@@ -18,7 +18,8 @@
     <header>
         <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="caught-list-icon" href="#"><img src="img/poke-ball.png" alt=""></a>
+                <!-- <a class="caught-list-icon" href=""><img src="img/poke-ball.png" alt=""></a> -->
+                <button id="list-toggle-btn" class="caught-list-icon"><img src="img/poke-ball.png" alt=""></button>
               <a class="navbar-brand" href="#">Pokédex</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -51,15 +52,35 @@
             <!-- For pokemonList[] -->
         </div>
 
-        <div id="container-caught-grid">
+        <!-- <div id="container-caught-grid"> -->
             <!-- For caughtPokemonList[] -->
-        </div>
+        <!-- </div> -->
 
         <div class="container-more-button">
-            <a class="more-btn" href="#">More</a>
+            <!-- <a id="more-btn" href="">More</a> -->
+            <button id="more-btn">More</button>
         </div>
 
     </div><!-- end of section-pokemon -->
+
+    <div id="section-caught-pokemon" class="display-none">
+      <div id="container-caught-grid">
+        <!-- For caughtPokemonList[] -->
+      </div>
+    
+    </div>
+
+    <!-- Modal -->
+    
+    <div id="pokemonModal" class="modal">
+        <div class="modal-content">
+            <div id="modalContent"></div>
+            <div class="container-back-button">
+                <!-- <a class="back-btn" href="">Back</a> -->
+                <button class="back-btn">Back</button>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container">

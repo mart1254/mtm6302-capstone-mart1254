@@ -68,12 +68,35 @@ body {
     font-family: urw-din, sans-serif;
 }
 
+#list-toggle-btn {
+    font-family: objektiv-mk1, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    background-color:#EE3032;
+    border-radius: 9px;
+    color: #000001;
+}
+
+#list-toggle-btn:hover {
+    background-color:#000001;
+    transition: .2s;
+}
+
 .navbar-toggler {
     border-style: none;
 }
 
 .caught-list-icon {
     width: 5rem;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-display {
+    display: block;
 }
 
 .navbar-collapse {
@@ -111,7 +134,8 @@ h1 {
 }
 
 .card-two:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    transform: scale(1.05);
+    box-shadow: 0 10px 23px 0 rgba(0,0,0,0.5);
 }
 
 .card-two-body-up {
@@ -272,7 +296,7 @@ input:checked + .slider:before {
     text-align: center;
 }
 
-.more-btn { 
+#more-btn { 
     font-family: objektiv-mk1, sans-serif;
     font-weight: 500;
     font-size: 1rem;
@@ -281,6 +305,12 @@ input:checked + .slider:before {
     padding: 5px 10%;
     border-radius: 9px;
     color: #000001;
+}
+
+#more-btn:hover {
+    background-color: #000001;
+    color:#f2f2f2;
+    transition: .2s;
 }
 
 footer {
@@ -301,22 +331,93 @@ footer a {
 /* ================================== Profile page =============================== */
 
 
+/* position: fixed;
+top: 0;
+left: 0;
+
+display: grid;
+justify-content: center;
+align-content: center;
+
+width: calc(100% - 50px);
+height: calc(100% - 50px);
+padding: 25px;
+
+background-color: rgba(18, 15, 15, 0.9);
+opacity: 0;
+visibility: hidden;
+transition: 0.5s; */
+
+.modal {
+    --bs-modal-zindex: 1055;
+    --bs-modal-width: 500px;
+    --bs-modal-padding: 1rem;
+    --bs-modal-margin: 0.5rem;
+    --bs-modal-color: ;
+    --bs-modal-bg: var(--bs-body-bg);
+    --bs-modal-border-color: var(--bs-border-color-translucent);
+    --bs-modal-border-width: var(--bs-border-width);
+    --bs-modal-border-radius: var(--bs-border-radius-lg);
+    --bs-modal-box-shadow: var(--bs-box-shadow-sm);
+    --bs-modal-inner-border-radius: calc(var(--bs-border-radius-lg) - (var(--bs-border-width)));
+    --bs-modal-header-padding-x: 1rem;
+    --bs-modal-header-padding-y: 1rem;
+    --bs-modal-header-padding: 1rem 1rem;
+    --bs-modal-header-border-color: var(--bs-border-color);
+    --bs-modal-header-border-width: var(--bs-border-width);
+    --bs-modal-title-line-height: 1.5;
+    --bs-modal-footer-gap: 0.5rem;
+    --bs-modal-footer-bg: ;
+    --bs-modal-footer-border-color: var(--bs-border-color);
+    --bs-modal-footer-border-width: var(--bs-border-width);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--bs-modal-zindex);
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    background-color: rgba(18, 15, 15, 0.9);
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    color: var(--bs-modal-color);
+    pointer-events: auto;
+    background-color: rgba(18, 15, 15, 0);
+    /* background-image: url("/img/pokedex-grid.png");
+    background-color: #f2f2f2;
+    background-size: 50rem; */
+    /* background-color: #f2f2f2; */
+    background-clip: padding-box;
+    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+    margin: 5rem auto;
+}
+
 #section-pokemon-profile {
     margin-bottom: 3rem;
     background-color: #4A5252;
-    border-radius: 0px 0px 30px 30px;
+    border-radius: 30px 30px 30px 30px;
 }
 
 .card-profile {
-    margin-top: 49px;
+    /* margin-top: 49px; */
     background-color: #d7d7d7;
-    border-radius: 0px 0px 25px 25px;
+    border-radius: 25px 25px 25px 25px;
 }
 
 .container-profile-img {
     background-color: #399CFF;
     width: 100%;
-    border-radius: 0px 0px 25px 25px;
+    border-radius: 25px 25px 25px 25px;
 }
 
 .profile-caught-icon {
@@ -421,13 +522,17 @@ footer a {
     color: #000001;
 }
 
+#section-caught-pokemon {
+    margin-bottom: 5rem;
+}
+
 /* ============================================== Media Queries ===================================== */
 
 
 @media screen and (min-width: 768px) {
 
 
-    .more-btn { 
+    #more-btn { 
         font-size: 1rem;
         padding: 10px 10%;
         border-radius: 9px;
