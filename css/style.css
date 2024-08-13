@@ -54,7 +54,7 @@ table {
 
 /* if background image does not work try removing dots or adding them example: ../ or ./ or just / */
 body {
-    background-image: url("img/pokedex-grid.png");
+    background-image: url("/img/pokedex-grid.png");
     background-color: #f2f2f2;
     background-size: 50rem;
 
