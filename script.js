@@ -123,7 +123,7 @@ function createPokemonModalContent(details) {
                     <div class="container-name-index-profile-btns">
                         <div class="container-name-index">
                             <h1>${details.name}</h1>
-                            <h2>${details.id}</h2>
+                            <h2>#${details.id}</h2>
                         </div>
                         <div class="container-profile-btn">
                             <a href="#" class="type-one" style="background-color: ${backgroundColorOne};">${firstType}</a>
@@ -585,7 +585,7 @@ function caughtPokemon(caughtPokemonList) {
                 $pokeIndex.classList.remove('caught-icon-none')
                 //Updates caught property of pokemon to yes
                 pokemon.caught = 'yes'
-                //Pushes caught pokemon to caughtPokemonList array, cannot be 'uncaught' or 'released'
+                
 
                 caughtPokemonList.push(pokemon)
                 // Function is called that creates the html for the pokemon object in/from caughtPokemonList
